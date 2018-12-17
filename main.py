@@ -1,0 +1,35 @@
+from machine import Pin,SPI
+import Screen
+import time
+
+power=Pin(13,Pin.OUT)
+power.value(1)
+spi=SPI(0,sck=Pin(18),mosi=Pin(5),baudrate=24000000)
+
+s = Screen.create(128, 64, spi, Pin(16), Pin(17))
+s.print('Hello, world. 1')
+time.sleep_ms(500)
+s.print('Hello, Aaron. 2')
+time.sleep_ms(500)
+s.print('Hello, Abel. 3')
+time.sleep_ms(500)
+s.print('Hello, Arthur. 4')
+time.sleep_ms(500)
+s.print('Hello, Angus. 5')
+time.sleep_ms(500)
+s.print('Hello, Andy. 6')
+time.sleep_ms(500)
+s.print('Hello, Alfred. 7')
+time.sleep_ms(500)
+s.print('Hello, Alexander. 8')
+time.sleep_ms(500)
+s.print('Hello, Adrian. 9')
+time.sleep_ms(500)
+s.print('Hello, Andrew. 10')
+time.sleep_ms(500)
+s.print('Hello, Alan. 11')
+time.sleep_ms(500)
+s.print('Hello, Adam. 12')
+time.sleep_ms(500)
+
+spi.deinit()
