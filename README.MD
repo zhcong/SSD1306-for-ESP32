@@ -1,9 +1,7 @@
 # SSD1306 for ESP32
   I didn't find the relevant driver on my board. But I find it in MicroPython‘s official code. Here's the [link](https://github.com/micropython/micropython/blob/master/drivers/display/ssd1306.py), you can just download this `.py` file.
-But it doesn't work good in my ESP32 board. My board is NodeMCU's `ESP-32s`,just like this picture:<br />
-![ESP-32s](img/ESP32.jpg)<br />
-And this is my SSD1306 OLED screen:<br />
-![ESP-32s](img/ssd1306.jpg)<br />
+But it doesn't work good in my ESP32 board. My board is NodeMCU's `ESP-32s`just like left picture and right is my SSD1306 OLED screen:<br />
+![ESP-32s](img/ESP32.jpg)   ![ESP-32s](img/ssd1306.jpg)<br />
 ## use Screen.py
 `Screen.py` just copy [this](https://github.com/micropython/micropython/blob/master/drivers/display/ssd1306.py) and modify a little.See a example:
 ```python
