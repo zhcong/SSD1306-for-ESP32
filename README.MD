@@ -9,14 +9,14 @@ And this is my SSD1306 OLED screen:<br />
 ```python
 from machine import Pin,SPI
 import Screen
+import time
 
 power=Pin(13,Pin.OUT)
 power.value(1)
-spi=SPI(0,sck=Pin(18),mosi=Pin(5),baudrate=24000000)
+spi=SPI(1,sck=Pin(18,Pin.OUT),mosi=Pin(5,Pin.OUT),baudrate=24000000)
 
-s = Screen.create(128, 64, spi, Pin(16), Pin(17))
-s.print('Hello, world!')
-spi.deinit()
+s = Screen.create(128, 64, spi, Pin(16,Pin.OUT), Pin(17,Pin.OUT))
+s.print('Hello, world.')
 ```
 I just add a function `print`, it work like `print` in python, Other features in [this](https://docs.micropython.org/en/latest/library/framebuf.html). What's more, I remove the `cs` in [official code](https://github.com/micropython/micropython/blob/master/drivers/display/ssd1306.py). Because my screen's CS has ground. So pin_13 is `vcc`, pin_18 is `SCL`, pin_5 is `SDA`, pin_16 is `D/C`, pin_17 is `RST`. Gif of function `print` as follows.<br />
 ![ESP-32s](img/print.gif)<br />
